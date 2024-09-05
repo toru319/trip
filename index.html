@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅行のしおり</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6f2; /* 優しいピンクの背景色 */
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+        h1, h2, .lead {
+            color: #ff4081; /* 明るいピンク */
+            background-color: #ffe6f2; /* 背景色を統一 */
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .countdown {
+            font-size: 2rem;
+            color: #ff85a2; /* 少し濃いピンク */
+            background-color: #fff0f5; /* フローレンスピンクの背景色 */
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .card-title {
+            color: #ff85a2; /* 少し濃いピンク */
+        }
+        .card {
+            border: 1px solid #ffb3c6; /* 薄いピンクの枠線 */
+        }
+        .card-body {
+            background-color: #fff0f5; /* フローレンスピンクの背景色 */
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+        .btn-primary {
+            background-color: #ff69b4; /* ホットピンクのボタン */
+            border-color: #ff69b4;
+        }
+        .btn-primary:hover {
+            background-color: #ff85a2; /* ホバー時に少し淡いピンクに */
+            border-color: #ff85a2;
+        }
+        .btn-link {
+            color: #ff85a2;
+        }
+        .btn-link:hover {
+            color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center my-5">
+        <h1 class="display-4">R-Travelへようこそ！</h1>
+        <div>
+            <p class="lead">次の旅行まであと...</p>
+        </div>
+        <div id="countdown" class="countdown mb-5"></div>
+        <div>
+            <h2 class="mb-4">しおりをチェック！</h2>
+        </div>
+        <div class="row">
+            <!-- しおりカードの例 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://image.asoview-media.com/image/production/note/news/article/8ca1983e-4d94-481a-b94b-a0e1d881e680.jpeg" class="card-img-top" alt="旅行イメージ">
+                    <div class="card-body">
+                        <h5 class="card-title">2年記念日デートin東京</h5>
+                        <p class="card-text">お付き合い2年を記念した一生の思い出を作ろう！</p>
+                        <a href="detail.html" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-3">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="data:image/jpeg;base64,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" class="card-img-top" alt="旅行イメージ">
+                    <div class="card-body">
+                        <h5 class="card-title">次のデート</h5>
+                        <p class="card-text">次のデートの計画はまだありません</p>
+                        <a href="detail.html" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-3">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 追加のしおりカード -->
+        </div>
+        <a href="list.html" class="btn btn-link mt-3">もっと見る</a>
+    </div>
+
+    <script>
+        // カウントダウンタイマーのスクリプト
+        const countdown = () => {
+            const countDate = new Date("Sep 28, 2024 00:00:00").getTime();
+            const now = new Date().getTime();
+            const gap = countDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const days = Math.floor(gap / day);
+            const hours = Math.floor((gap % day) / hour);
+            const minutes = Math.floor((gap % hour) / minute);
+            const seconds = Math.floor((gap % minute) / second);
+
+            document.getElementById('countdown').innerText = `${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
+        };
+
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>

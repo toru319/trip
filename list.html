@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>しおり一覧</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6f2; /* 優しいピンクの背景色 */
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+        h1 {
+            color: #ff4081; /* 明るいピンク */
+            background-color: #ffe6f2; /* 背景色を統一 */
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .card-title {
+            color: #ff85a2; /* 少し濃いピンク */
+        }
+        .card {
+            border: 1px solid #ffb3c6; /* 薄いピンクの枠線 */
+        }
+        .card-body {
+            background-color: #fff0f5; /* フローレンスピンクの背景色 */
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+        .btn-primary {
+            background-color: #ff69b4; /* ホットピンクのボタン */
+            border-color: #ff69b4;
+        }
+        .btn-primary:hover {
+            background-color: #ff85a2; /* ホバー時に少し淡いピンクに */
+            border-color: #ff85a2;
+        }
+        .btn-link {
+            color: #ff85a2;
+        }
+        .btn-link:hover {
+            color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">しおり一覧</h1>
+        <div class="row">
+            <!-- しおりカードの例 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://image.asoview-media.com/image/production/note/news/article/8ca1983e-4d94-481a-b94b-a0e1d881e680.jpeg" class="card-img-top" alt="旅行イメージ">
+                    <div class="card-body">
+                        <h5 class="card-title">2年記念日デートin東京</h5>
+                        <p class="card-text">お付き合い2年を記念した一生の思い出を作ろう！</p>
+                        <a href="detail.html" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-3">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://thumb.photo-ac.com/46/46db0b365babbd8c6fd6036ab1881c07_t.jpeg" class="card-img-top" alt="旅行イメージ">
+                    <div class="card-body">
+                        <h5 class="card-title">次のデート</h5>
+                        <p class="card-text">次のデートの計画はまだありません</p>
+                        <a href="detail.html" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-3">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 追加のしおりカード -->
+        </div>
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn btn-link mt-3">トップに戻る</a>
+        </div>
+    </div>
+</body>
+</html>
